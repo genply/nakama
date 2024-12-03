@@ -159,9 +159,9 @@ func ValidateConfig(logger *zap.Logger, c Config) map[string]string {
 	if c.GetSession().SingleParty && !c.GetSession().SingleSocket {
 		logger.Fatal("Single party cannot be enabled without single socket", zap.Strings("param", []string{"session.single_party", "session.single_socket"}))
 	}
-	if c.GetRuntime().HTTPKey == "" {
-		logger.Fatal("Runtime HTTP key must be set", zap.String("param", "runtime.http_key"))
-	}
+//	if c.GetRuntime().HTTPKey == "" {
+//		logger.Fatal("Runtime HTTP key must be set", zap.String("param", "runtime.http_key"))
+//	}
 	if c.GetConsole().MaxMessageSizeBytes < 1 {
 		logger.Fatal("Console max message size bytes must be >= 1", zap.Int64("console.max_message_size_bytes", c.GetConsole().MaxMessageSizeBytes))
 	}
